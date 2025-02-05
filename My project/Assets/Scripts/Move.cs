@@ -6,10 +6,16 @@ public class Move : MonoBehaviour
 {
     [SerializeField]
     private float moveSpeed = 5.0f;
-    // Start is called before the first frame update
-    void Start()
+
+    [SerializeField] private Rigidbody rb;
+
+    // on enable
+
+    private void OnEnable()
     {
-        
+        rb = GetComponent<Rigidbody>();
+
+        rb.freezeRotation = true;
     }
 
     // Update is called once per frame
